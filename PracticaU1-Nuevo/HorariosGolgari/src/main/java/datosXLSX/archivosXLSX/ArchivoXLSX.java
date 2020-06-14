@@ -112,12 +112,10 @@ public class ArchivoXLSX {
             contador = conContador = vGlobalScript = varGlobalCreateTable = 0;
             comandosSinBD = new ArrayList<String>();
         }
-
-        System.out.println(user + " ----- " +password + " ------ " + url + " ------ "+ Nombre_BaseDeDatos);
         conect.conexionBD(user,password,url,Nombre_BaseDeDatos);
         Connection reg = conect.getConection();
         try{
-            for(int contador2 = 0 ; contador2 < scriptTerminado.size() ; contador2 ++){
+            for(int contador2 = 0 ; contador2 < scriptTerminado.size() ; contador2++){
 
                 try {
                     PreparedStatement b = reg.prepareStatement(scriptTerminado.get(contador2));

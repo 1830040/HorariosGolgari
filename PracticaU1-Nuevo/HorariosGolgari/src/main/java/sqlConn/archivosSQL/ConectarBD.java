@@ -19,8 +19,6 @@ public class ConectarBD {
             if(password2.contains("null")){
                 //CREANDO LA CONEXION DE LA BASE DE DATOS
                 conn = DriverManager.getConnection(url2,user2,null);
-                System.out.println(conn);
-                System.out.println("Hola" + password2);
 
                 //CREANDO LA BASE DE DATOS EN CASO DE NO EXISTIR
                 Statement baseDeDatos = conn.createStatement();
@@ -31,12 +29,7 @@ public class ConectarBD {
                 seleccioanrBase.executeUpdate("USE "+nombre_BaseDeDatos);
             }else {
                 //CREANDO LA CONEXION DE LA BASE DE DATOS
-                System.out.println(url2);
-                System.out.println(user2);
-                System.out.println(password2);
                 conn = DriverManager.getConnection(url2,user2,password2);
-                System.out.println(conn);
-                System.out.println("Hola" + password2);
 
                 //CREANDO LA BASE DE DATOS EN CASO DE NO EXISTIR
                 Statement baseDeDatos = conn.createStatement();

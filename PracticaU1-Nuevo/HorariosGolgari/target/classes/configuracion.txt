@@ -1,6 +1,6 @@
 gestor {Mysql}
-user {Chris}
-password (Si no tiene ponga null) {root}
+user {root}
+password (Si no tiene ponga null) {null}
 nombre_bd {horarios}
 url {jdbc:mysql://localhost:3306/}
 tipo de archivo (txt/excel) {excel}
