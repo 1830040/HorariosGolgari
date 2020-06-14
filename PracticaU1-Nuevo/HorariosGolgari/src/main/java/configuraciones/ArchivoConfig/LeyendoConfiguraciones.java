@@ -49,7 +49,6 @@ public class LeyendoConfiguraciones {
             } else if (cadenasDeDatos.get(i).contains("nombre del archivo")) {
                 nomArc = cadenasDeDatos.get(i).substring(cadenasDeDatos.get(i).indexOf("{") + 1, cadenasDeDatos.get(i).indexOf("}"));
             }
-            System.out.println(cadenasDeDatos.get(i).substring(cadenasDeDatos.get(i).indexOf("{") + 1, cadenasDeDatos.get(i).indexOf("}")));
         }
 
         try{

@@ -13,6 +13,7 @@ import sqlConn.archivosSQL.*;
 
 public class ArchivoXLSX {
 
+    ConectarBD conect = new ConectarBD();
     static ArrayList<String> comandosSinBD = new ArrayList<String>();
     static ArrayList<String> scriptTerminado = new ArrayList<String>();
 
@@ -111,10 +112,10 @@ public class ArchivoXLSX {
             contador = conContador = vGlobalScript = varGlobalCreateTable = 0;
             comandosSinBD = new ArrayList<String>();
         }
-        ConectarBD conn;
+
         System.out.println(user + " ----- " +password + " ------ " + url + " ------ "+ Nombre_BaseDeDatos);
-        conn = new ConectarBD(user,password,url,Nombre_BaseDeDatos);
-        Connection reg = conn.getConection();
+        conect.conexionBD(user,password,url,Nombre_BaseDeDatos);
+        Connection reg = conect.getConection();
         try{
             for(int contador2 = 0 ; contador2 < scriptTerminado.size() ; contador2 ++){
 
