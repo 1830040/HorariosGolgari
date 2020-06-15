@@ -1,7 +1,0 @@
-sqlConn\archivosSQL\ConectarBD.class
-datosTXT\archivosTXT\PlantillaTxt.class
-datosTXT\archivosTXT\ArchivoTXT.class
-datosXLSX\archivosXLSX\PlantillaExcel.class
-datosXLSX\archivosXLSX\ArchivoXLSX.class
-org\conection_db\App.class
-configuraciones\ArchivoConfig\LeyendoConfiguraciones.class
