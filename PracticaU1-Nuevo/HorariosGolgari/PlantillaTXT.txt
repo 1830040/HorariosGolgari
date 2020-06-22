@@ -1,0 +1,51 @@
+A continuación se muestra la plantilla esperada para cargar datos de un TXT:
+
+TABLA {(Nombre de la Tabla)} #
+COLUMNAS {(NOMBRE_COLUMNA1) (TIPO DE DATO INT/TINYINT) (RESTRICCIONES), (NOMBRE_COLUMNA2) (TIPO DE DATO CHAR/VARCHAR) (RESTRICCIONES)} #
+NOMBRE_COLUMNA1 {(NUMERO - FILA 1 COLUMNA1) / (NUMERO 2 - FILA 2 COLUMNA 1) } #
+NOMBRE_COLUMNA2 {'(VALOR - FILA 1 COLUMNA2)' / '(VALOR 2 - FILA 2 COLUMNA 2)'} #
+!
+
+Notas:
+>No usar caracteres especiales dentro de los datos, ni usar acentos
+>Los valores deben ser asignados entre llaves  { }
+>Al terminar la linea se debe poner un #
+>Para separar los datos de una misma columna que se acomodaran en otras filas se separan con /
+>Cuando termine de ingresar los datos por tabla, se debe poner el signo ! para determinar el fin de una tabla y el posible comienzo de otra
+>Los valores de tipo varchar/char deben ser guardados con 'comillas simples'
+>Los valores numericos solamente son escritos, ejemplo:  Columna {1/2/5/5} #
+>Los valores BOOLEANOS se almacenan con TRUE / FALSE
+>El acomodo es <<Columna {Fila 1 / Fila 2 / Fila 3} #>> todos los valores de las filas pertenencen a la columna donde estan asignados
+
+
+VISUALIZACION DE LAS TABLAS:
+TABLA: Carreras
+|  clv_carrera  |   Nombre                                                 |
+|     ITI       |   Ingenieria en Tecnologias de la Informacion            |
+|     ITM       |   Ingenieria en Tenologias en Manufactura                |
+|     LAE       |   Licenciatura en Adiministracion y Gestion empresarial  |
+|     ISA       |   Ingenieria en Sistemas Automotrices                    |
+
+TABLA: Alumnos
+|  matricula    |   Nombre    |   ApellidoPaterno    |   ApellidoMaterno   |   Turno   |   CuatrimestreActual   |  clv_carrera   |
+|   1830040     |    Jose     |        Perez         |      Perez          |   TRUE    |           4            |     ITI        |
+|   1830387     |   Daniela   |       Vigueras       |      Gatica         |   FALSE   |           5            |     ITM        |
+|   1830039     |  Alejandro  |       Martinez       |      Lopez          |   TRUE    |           6            |     LAE        |
+
+EJEMPLO DE VISUALIZACION EN FORMATO TXT:
+
+TABLA {Carreras} #
+COLUMNAS {clv_carrera char (3) Not Null Primary Key, Nombre varchar(60) Not Null} #
+CLV_CARRERA {ITI/ITM/LAE/ISA} #
+NOMBRE {Ingenieria en Tecnologias de la Informacion/Ingenieria en Tecnologias en Mecatronica/Licenciatura en Administración y Gestión Empresarial/Ingenieria en Sistemas Automotrices} #
+!
+TABLA {Alumnos} #
+COLUMNAS {matricula char(7) Not Null, Nombre Varchar(30), ApellidoPaterno varchar (30) Not Null, ApellidoMaterno varchar (30),Turno BOOLEAN, CuatrimestreActual TINYINT Not Null, clv_carrera char (3)} #
+MATRICULA {'1830040'/'1830387'/'1830039'} #
+NOMBRE {Perez/Fuente/Garcia} #
+APELLIDOPATERNO {'Jose'/'Daniela'/'Alejandro'} #
+APELLIDO MATERNO {'Perez'/'Gatica'/'Lopez'} #
+TURNO {TRUE/FALSE/TRUE} #
+CUATRIMESTRE {4/5/6} #
+CLV_CARRERA {'ITI'/'ITM'/'LAE'} #
+!

@@ -1,0 +1,101 @@
+TABLA {Grupos} #
+COLUMNAS {clv_grupo VARCHAR (20) Not Null,turno boolean} #
+CLV_GRUPO {'ITI-27504'/'IM-27534'/'ISA-27502'/'ITM-27503/'ITI-27501'} #
+TURNO {True/False/True/False/False} #
+!
+TABLA {Carrera} #
+COLUMNAS {idcarrera TINYINT,nombre_carrera VARCHAR (100)} #
+IDCARRERA {1/2/3/4/5} #
+NOMBRE_CARRERA {'Ingenieria en Mecatronica'/'Ingenieria en Tecnologias de la Informacion'/'Ingenieria en Tecnologias de Manufactura'/'Ingenieria en Sistemas Automotrices'/'Licenciatura en Administracion y Gestion Empresarial'} #
+!
+TABLA {Aulas} #
+COLUMNAS {id_aula VARCHAR(10) NOT NULL,nombre VARCHAR(100) NOT NULL,tipo VARCHAR(20) NOT NULL,capacidad INT(11) NOT NULL} #
+ID_AULA {'A207'/'A214'/'A204'/'A203'} #
+NOMBRE {'Aula 9'/'Lab-ITI-1'/'Lab. Redes'/'Lab.-ITI-2'} #
+TIPO {'Aula'/'Lab. Computo'/'Lab. Redes'/'Lab. Computo'} #
+CAPACIDAD {35/35/25/34} #
+!
+TABLA {Categorias_equipo} #
+COLUMNAS {id INT(11),nombre VARCHAR(100) NOT NULL,descripcion VARCHAR(300)} #
+ID {1/} #
+NOMBRE {'Proyector'/} #
+DESCRIPCION {'Equipo usado en su mayor parte del tiempo en los laboratorios, pero tambien se encuentran en las aulas'/} #
+!
+TABLA {Usuarios} #
+COLUMNAS {clv_usuario varchar (50) Not Null,id_carrera TINYINT Not Null,nombre_usuario varchar (50),nivel_ads varchar(5) Not Null,contrato varchar(3) Not Null} #
+CLV_USUARIO {'gsuarezv@upv.edu.mx'/'ojassol@upv.edu.mx'/'jrodriguezg@upv.edu.mx'/'rmachuchoc@upv.edu.mx'/'etorresr@upv.edu.mx'} #
+ID_CARRERA {1/2/3/4/5} #
+NOMBRE_USUARIO {'Gladis Suarez'/'Omar Jasso'/'Jose Rodriguez'/'Ruben Machucho'/'Estela Torres'} #
+NIVEL_ADS {'DOC'/'MTR'/'MTR'/'DOC'/'LIC'} #
+CONTRATO {'PTC'/'PTC'/'PTA'/'PTC'/'PTC'} #
+!
+TABLA {Plan_estudios} #
+COLUMNAS {clv_plan VARCHAR(10) NOT NULL,nombre_plan VARCHAR(45) NOT NULL,nivel VARCHAR(3) NOT NULL,id_carrera TINYINT NOT NULL} #
+CLV_PLAN {'ITI-2010'/'ITI-2018'/'ITM-2010'/'ITM-2018'/'ISA-2010'} #
+NOMBRE_PLAN {'ITI2010/ITI2018/ITM2010/ITM2018/ISA2010'} #
+NIVEL {'ING'/'ING'/'ING'/'ING'/'ING'} #
+ID_CARRERA {2/2/3/3/4} #
+!
+TABLA {Materias} #
+COLUMNAS {clv_materia VARCHAR (10) Not Null,nombre_materia VARCHAR(50) NOT NULL,creditos TINYINT NULL,cuatrimestre TINYINT NOT NULL,posicion TINYINT NOT NULL,clv_plan VARCHAR(10) NOT NULL,horas_x_semana TINYINT NOT NULL,tipo_materia CHAR(3) NOT NULL} #
+CLV_MATERIA {'ITI-27506'/'ITI-27503'/'ITI-07444'/'ITM-26482'/'LAE-29308'} #
+NOMBRE_MATERIA {'Administracion de base de datos'/'Sistemas Operativos'/'Computo en dispositivos moviles'/'Mecanica de materiales'/'Contabilidad'} #
+CREDITOS {6/5/6/4/5} #
+CUATRIMESTRE {6/6/9/6/1} #
+POSICION {7/4/2/5/1} #
+CLV_PLAN {'ITI-2018'/'ITI-2018'/'ITI-2010'/'ITM-2018'/'ITM-2018'} #
+HORAS_X_SEMANA {6/5/5/7/5} #
+TIPO_MATERIA {'ESP'/'ESP'/'ESP'/'ESP'/'ESP'} #
+!
+TABLA {Equipo} #
+COLUMNAS {id_equipo INT(11) NOT NULL,id_categoria INT(11),nombre VARCHAR(100) NOT NULL,descripcion VARCHAR(100) NOT NULL} #
+ID_EQUIPO {1/2} #
+ID_CATEGORIA {1/2} #
+NOMBRE {'Proyector de Video EVL GP9'/'Mesa Banco'} #
+DESCRIPCION {'Blanco, imágenes hasta 120"', perilla para regular el enfoque'/'Plastico gris, asiento para una persona, compartimento para libros'} #
+!
+TABLA {Prestamos} #
+COLUMNAS {clv_usuario varchar (50) Not Null,idcarrera TINYINT Not Null} #
+CLV_USUARIO {'gsuarezv@upv.edu.mx'/'ojassol@upv.edu.mx'/'jrodriguezg@upv.edu.mx'/'rmachuchoc@upv.edu.mx'/'etorresr@upv.edu.mx'} #
+ID_CARRERA {1/2/3/4/5} #
+!
+TABLA {Login} #
+COLUMNAS {clv_usuario VARCHAR(50),pass_usuario CHAR(50),tipo_usuario CHAR(4) Not Null DEFAULT 'PROF' CHECK} #
+CLV_USUARIO {'gsuarezv@upv.edu.mx'/'ojassol@upv.edu.mx'/'jrodriguezg@upv.edu.mx'/'rmachuchoc@upv.edu.mx'/'etorresr@upv.edu.mx'} #
+PASS_USUARIO {'user'/'user'/'user'/'user'/'user'} #
+TIPO_USUARIO {'PROF'/'PROF'/'PROF'/'PROF'/'DIRE'} #
+!
+TABLA {uso_aula_grupo} #
+COLUMNAS {dia TINYINT NOT NULL,espacio_tiempo TINYINT NOT NULL,id_aula VARCHAR(10),clv_grupo VARCHAR(80),clv_materia VARCHAR(10)} #
+DIA {1/2/3/4/5/1/2/3/4/5/1/1/2/3/5} #
+ESPACIO_TIEMPO {1/1/1/1/1/3/3/3/3/3/6/7/7/7/6} #
+ID_AULA {'A203'/'A203'/'A203'/'A203'/'A203'/'A204'/'A204'/'A204'/'A204'/'A204'/'A214'/'A214'/'A214'/'A214'/'A214'} #
+CLV_GRUPO {'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'/'ITI 6-1'} #
+CLV_MATERIA {'ITI-27503'/'ITI-27503'/'ITI-27503'/'ITI-27503'/'ITI-27503'/'ITI-27505'/'ITI-27505'/'ITI-27505'/'ITI-27505'/'ITI-27505'/'ITI-27504'/'ITI-27504'/'ITI-27504'/'ITI-27504'/'ITI-27504'} #
+!
+TABLA {aula_equipo} #
+COLUMNAS {id_equipo INT(11) NOT NULL,id_aula VARCHAR(10),cantidad INT(11)} #
+ID_EQUIPO {1/2/3} #
+ID_AULA {'A203'/'A211'/'A204'} #
+CANTIDAD {33/32/33} #
+!
+TABLA {Disponibilidad} #
+COLUMNAS {dia TINYINT Not Null,espacio_tiempo TINYINT Not Null,clv_usuario VARCHAR (50)} #
+DIA {1/2/3/4/5} #
+ESPACIO_TIEMPO {1/2/3/4/5} #
+CLV_USUARIO {'ojassol@upv.edu.mx'/'jrodriguezg@upv.edu.mx'/'rmachuchoc@upv.edu.mx'/'gsuarezv@upv.edu.mx'/'haviles@upv.edu.mx'} #
+!
+TABLA {Grupo_materia_profesor} #
+COLUMNAS {clv_grupo VARCHAR (10) Not Null,clv_materia VARCHAR (10) Not Null,clv_usuario VARCHAR (50) Not Null} #
+CLV_GRUPO {'ITI 6-2'/'ITI 6-1'/'ITI 5-2'/'ITI 5-1'/ITM 7-1} #
+CLV_MATERIA {'ITI-27504'/'ITI-27506'/'ITI-27505'/'ITI-27503'/'ITM-26482'} #
+CLV_USUARIO {'spolancom@upv.edu.mx'/'ojassol@upv.edu.mx'/'mbutronb@upv.edu.mx'/'ipulidop@upv.edu.mx'/'jrodriguezg@upv.edu.mx'} #
+!
+TABLA {Materia_usuario} #
+COLUMNAS {clv_materia VARCHAR (10) Not Null,clv_plan VARCHAR (10) Not Null,clv_usuario VARCHAR (50) Not Null,puntos_confianza TINYINT,puntos_director TINYINT} #
+CLV_MATERIA {'ITI-27506'/'ITM-26482'/'ISA-19553'/'IM-23531'} #
+CLV_PLAN {'ITI-2018'/'ITM-2018'/'ISA-2010'/'IM-2018'} #
+CLV_USUARIO {'ojassol@upv.edu.mx'/'jrodriguezg@upv.edu.mx'/'rmachuchoc@upv.edu.mx'/'gsuarezv@upv.edu.mx'} #
+PUNTOS_CONFIANZA {5/4/4/4} #
+PUNTOS_DIRECTOR {5/4/5/3} #
+!
