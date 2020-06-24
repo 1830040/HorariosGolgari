@@ -14,7 +14,7 @@ public class CargarScript {
 
     public static File global = new File("src/main/resources/BaseDeDatosGolgari.sql");
 
-    public void cargaBDScript(String nombreArchivo,String user,String password,String url,String NombreBaseDeDatos) {
+    public void cargaBDScript(String nombreArchivo,String user,String password,String url,String NombreBaseDeDatos, String gestor) {
 
         File archivo = global;
         FileReader buscar = null;

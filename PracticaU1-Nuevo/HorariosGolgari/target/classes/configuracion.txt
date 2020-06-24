@@ -1,7 +1,7 @@
-gestor {Mysql}
+gestor {Sqlite}
 user {root}
 password (Si no tiene ponga null) {null}
 nombre_bd {horarios}
-url {jdbc:mysql://localhost:3306/}
-tipo de archivo (txt/excel/sql) {txt}
+url {jdbc:sqlite:}
+tipo de archivo (txt/excel/sql) {excel}
 nombre del archivo {BaseDeDatosGolgari}

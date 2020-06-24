@@ -20,7 +20,7 @@ public class ArchivoXLSX {
     static ArrayList<String> scriptTerminado = new ArrayList<String>();
 
     //METODO ENCARGADO DE CARGAR LOS DATOS DEL XLSX A LA BASE DE DATOS
-    public void InsertarDatos(String nombreArchivo, String user, String password, String url, String NombreBaseDeDatos) {
+    public void InsertarDatos(String nombreArchivo, String user, String password, String url, String NombreBaseDeDatos, String gestor) {
         try{
 
             //DECLARANDO RUTA DEL ARCHIVO
@@ -118,28 +118,70 @@ public class ArchivoXLSX {
             }
 
             //VERIFICANDO LA CONEXIÓN A LA BASE DE DATOS
-            conect.conexionBD(user, password, url, NombreBaseDeDatos);
-            Connection reg = conect.getConection();
+            if(gestor.equals("Sqlite")){
 
-            for (int contador2 = 0; contador2 < scriptTerminado.size(); contador2++) {
-                try {
-                    //PREPARANDO LA SENTENCIA PARA SER EJECUTADA LA LINEA DE COMANDO Y CREAR, AGREGAR NUEVOS DATOS A LA BASE DE DATOS
-                    PreparedStatement b = reg.prepareStatement(scriptTerminado.get(contador2));
-                    b.executeUpdate();
-                } catch (SQLSyntaxErrorException e) {
-                    System.out.println("Error al ingresar datos");
-                    System.out.println("Usar la platilla Generada");
-                    PlantillaExcel pex = new PlantillaExcel();
-                    pex.EscribirEXCEL();
-                } catch (SQLIntegrityConstraintViolationException d) {
-                    System.out.println("Error al ingresar datos");
-                    System.out.println("Datos duplicados");
-                } catch (NullPointerException e) {
-                    System.out.println("Ruta no encontrada para cargar los datos del xlsx");
+                System.out.println("SQLITE ENTRA");
+
+
+
+
+                for (int contador2 = 1; contador2 < scriptTerminado.size(); contador2++) {
+                    try(Connection conn = DriverManager.getConnection(url+NombreBaseDeDatos+".db");
+                    Statement stmt = conn.createStatement()) {
+                        //PREPARANDO LA SENTENCIA PARA SER EJECUTADA LA LINEA DE COMANDO Y CREAR, AGREGAR NUEVOS DATOS A LA BASE DE DATOS
+                        stmt.execute(scriptTerminado.get(contador2));
+                    } catch (SQLSyntaxErrorException e) {
+                        System.out.println("Error al ingresar datos");
+                        System.out.println("Usar la platilla Generada");
+                        PlantillaExcel pex = new PlantillaExcel();
+                        pex.EscribirEXCEL();
+                    } catch (SQLIntegrityConstraintViolationException d) {
+                        System.out.println("Error al ingresar datos");
+                        System.out.println("Datos duplicados");
+                    } catch (NullPointerException e) {
+                        System.out.println("Ruta no encontrada para cargar los datos del xlsx");
+                    }
                 }
+
+
+
+            }else if(gestor.equals("Mysql")){
+
+
+                System.out.println("MYSQL ENTRA");
+
+                conect.conexionBD(user, password, url, NombreBaseDeDatos);
+                Connection reg = conect.getConection();
+
+
+                for (int contador2 = 0; contador2 < scriptTerminado.size(); contador2++) {
+                    try {
+                        //PREPARANDO LA SENTENCIA PARA SER EJECUTADA LA LINEA DE COMANDO Y CREAR, AGREGAR NUEVOS DATOS A LA BASE DE DATOS
+                        PreparedStatement b = reg.prepareStatement(scriptTerminado.get(contador2));
+                        b.executeUpdate();
+                    } catch (SQLSyntaxErrorException e) {
+                        System.out.println("Error al ingresar datos");
+                        System.out.println("Usar la platilla Generada");
+                        PlantillaExcel pex = new PlantillaExcel();
+                        pex.EscribirEXCEL();
+                    } catch (SQLIntegrityConstraintViolationException d) {
+                        System.out.println("Error al ingresar datos");
+                        System.out.println("Datos duplicados");
+                    } catch (NullPointerException e) {
+                        System.out.println("Ruta no encontrada para cargar los datos del xlsx");
+                    }
+                }
+
+
+
+
+            }else if(gestor.contains("Postgres")){
+
             }
 
+
         }catch (SQLException e){
+            System.out.println(e);
             System.out.println("Error de sintaxis ");
         }catch (IOException e) {
             System.out.println("Error dentro del archivo, Vuelve a Intentar");

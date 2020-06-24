@@ -17,7 +17,7 @@ public class ArchivoTXT {
 
     static File global = new File("src/main/resources/BaseDeDatosGolgari.txt");
 
-    public void lecturaDatosTxt(String nombreArchivo, String user, String password, String url, String NombreBaseDeDatos){
+    public void lecturaDatosTxt(String nombreArchivo, String user, String password, String url, String NombreBaseDeDatos, String gestor){
 
         File archivo = global;
         FileReader buscar = null;

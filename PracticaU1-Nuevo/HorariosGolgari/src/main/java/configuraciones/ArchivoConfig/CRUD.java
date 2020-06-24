@@ -25,7 +25,7 @@ public class CRUD {
 
     String auxiliar = "", gestor = "", usuario = "", contrasena = "", nombreBD = "", url = "", tipoArc = "", nomArc = "";
 
-    public void InsertarDatos() {
+    public void Insert() {
         try {
             String path = archivo2.getCanonicalPath();
             File archivo = new File(path);
@@ -43,7 +43,7 @@ public class CRUD {
         } catch (IOException e) {
             System.out.println("Error al encontrar la ruta");
         }
-        for (int i = 1; i < cadenasDeDatos.size(); i++) {
+        for (int i = 0; i < cadenasDeDatos.size(); i++) {
             if (cadenasDeDatos.get(i).contains("gestor")) {
                 gestor = cadenasDeDatos.get(i).substring(cadenasDeDatos.get(i).indexOf("{") + 1, cadenasDeDatos.get(i).indexOf("}"));
             } else if (cadenasDeDatos.get(i).contains("url")) {
@@ -61,12 +61,16 @@ public class CRUD {
             }
         }
 
+        System.out.println(gestor);
+       /* System.out.println(url);
+        System.out.println(contrasena);*/
+
         if (tipoArc.equals("Excel") || tipoArc.equals("excel") || tipoArc.equals("xlsx")) {
-            arcXlsx.InsertarDatos(nomArc + ".xlsx", usuario, contrasena, url, nombreBD);
+            arcXlsx.InsertarDatos(nomArc + ".xlsx", usuario, contrasena, url, nombreBD,gestor);
         } else if (tipoArc.equals("Txt") || tipoArc.equals("txt")) {
-            arcTXT.lecturaDatosTxt(nomArc + ".txt", usuario, contrasena, url, nombreBD);
+            arcTXT.lecturaDatosTxt(nomArc + ".txt", usuario, contrasena, url, nombreBD,gestor);
         } else if (tipoArc.equals("SQL") || tipoArc.equals("sql")) {
-            cargaSC.cargaBDScript(nomArc + ".sql", usuario, contrasena, url, nombreBD);
+            cargaSC.cargaBDScript(nomArc + ".sql", usuario, contrasena, url, nombreBD,gestor);
         }
 
     }
