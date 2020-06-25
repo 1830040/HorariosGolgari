@@ -14,7 +14,35 @@ public class App {
     public static void main( String[] args ) throws IOException, SQLException {
 
         CRUD a = new CRUD();
-        a.Insert();
+        a.DeleteDataCondicionado("Carrera","idcarrera","=","5");
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+        try(Connection conn = DriverManager.getConnection("jdbc:sqlite:horarios.db");
+            Statement stmt = conn.createStatement()){
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Carrera;");
+            while(rs.next()){
+                System.out.println(rs.getString(1));
+            }
+
+        }catch (NullPointerException e){
+            System.out.println("No tiene nada");
+        }catch (SQLException e){
+            System.out.println("HOLA");
+        }
+////////////////////////////////////////////////////////////////////////////////////////
+        //TODO LO QUE ESTA DENTRO DE ESTOS GUIONES ES PARA VER LA TABLA QUE VAS A MODIFICAR SOLO TIENES QUE MOVER
+        //LA LINEA 24 Y 26, LA LINEA 24 SIRVE PARA SELECCIONAR LA TABLA QUE QUIERE VER LOS CAMBIOS Y LA 26 SIRVE
+        //PARA MOVERTE DENTRO DE LAS COLUMNAS, EN SQLITE AL PARECER LA PRIMERA COLUMNA ES CON EL NUMERO 1
+        //EN MYSQL LA PRIMERA ES 0
+        //AHORA LO QUE TE PIDO ES QUE PRUBES TODOS LOS CRUD QUE HICE DE SQLITE Y YA, LOS PROPIOS METODOS TE VAN A DECIR
+        //QUE OCUPAN
+
+
+
+        /*CRUD a = new CRUD();
+        a.DropTable("disponibilidad");*/
 
         /*
         a.UpadteSinCondicion("nomTabla","nomColumna","valor");
