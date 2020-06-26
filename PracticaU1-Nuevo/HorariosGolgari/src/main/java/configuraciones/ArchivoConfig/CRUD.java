@@ -59,9 +59,6 @@ public class CRUD {
             }
         }
 
-        System.out.println(gestor);
-       /* System.out.println(url);
-        System.out.println(contrasena);*/
 
         if (tipoArc.equals("Excel") || tipoArc.equals("excel") || tipoArc.equals("xlsx")) {
             arcXlsx.InsertarDatos(nomArc + ".xlsx", usuario, contrasena, url, nombreBD,gestor);
@@ -74,6 +71,8 @@ public class CRUD {
     }
 
     public void DropTable(String NombreTabla) throws SQLException {
+
+
         try {
             String path = archivo2.getCanonicalPath();
             File archivo = new File(path);
@@ -112,8 +111,6 @@ public class CRUD {
             case "Sqlite":
 
 
-
-
                 try (Connection conn = DriverManager.getConnection(url + nombreBD + ".db");
                      Statement stmt = conn.createStatement()) {
                     stmt.execute("DROP TABLE " + NombreTabla + ";");
@@ -134,19 +131,27 @@ public class CRUD {
                 }catch (SQLSyntaxErrorException e){
                     System.out.println("Error. No se encuentra ninguna tabla coincidente");
                 }catch (SQLException e){
+
+                    if (tipoArc.equals("Excel") || tipoArc.equals("excel") || tipoArc.equals("xlsx")) {
+                        arcXlsx.InsertarDatos(nomArc + ".xlsx", usuario, contrasena, url, nombreBD,"Sqlite");
+                    } else if (tipoArc.equals("Txt") || tipoArc.equals("txt")) {
+                        arcTXT.lecturaDatosTxt(nomArc + ".txt", usuario, contrasena, url, nombreBD,"Sqlite");
+                    } else if (tipoArc.equals("SQL") || tipoArc.equals("sql")) {
+                        cargaSC.cargaBDScript(nomArc + ".sql", usuario, contrasena, url, nombreBD,"Sqlite");
+                    }
+
+
                     try (Connection conn = DriverManager.getConnection(url + nombreBD + ".db");
                          Statement stmt = conn.createStatement()) {
                         stmt.execute("DROP TABLE " + NombreTabla + ";");
                     } catch (SQLSyntaxErrorException a){
                         System.out.println("Error. No se encuentra ningnua tabla coincidente");
                     }
+
+
                 }
                 break;
 
-
-            case "Postgres":
-
-                break;
             default:
 
         }
@@ -189,40 +194,50 @@ public class CRUD {
             }
         }
 
-        int Auxiliar2;
-
         switch (gestor){
             case "Mysql":
 
                 conect.conexionBD(usuario,contrasena,url,nombreBD);
                 Connection reg = conect.getConection();
-                Auxiliar2 = Integer.parseInt(valor);
+
                 try{
-                    if(Auxiliar2 >= 0 && Auxiliar2 <= 32767){
-                        PreparedStatement a = reg.prepareStatement("DELETE FROM "+NombreTabla+" WHERE "+ columnaCondicionada +" "+ condicion+" " +Auxiliar2 + ";");
-                        a.executeUpdate();
-                    }else {
-                        PreparedStatement a = reg.prepareStatement("DELETE FROM "+NombreTabla+" WHERE "+ columnaCondicionada +" "+ condicion+" "+"'"+valor+"'"+";");
-                        a.executeUpdate();
-                    }
+
+                    PreparedStatement a = reg.prepareStatement("DELETE FROM "+NombreTabla+" WHERE "+ columnaCondicionada +" "+ condicion+" " +valor+ ";");
+                    a.executeUpdate();
 
                 }catch (SQLSyntaxErrorException e){
                     System.out.println("Error. No se encuentra ninguna tabla coincidente");
                 }catch (SQLException e){
 
+
+                    if (tipoArc.equals("Excel") || tipoArc.equals("excel") || tipoArc.equals("xlsx")) {
+                        arcXlsx.InsertarDatos(nomArc + ".xlsx", usuario, contrasena, url, nombreBD,"Sqlite");
+                    } else if (tipoArc.equals("Txt") || tipoArc.equals("txt")) {
+                        arcTXT.lecturaDatosTxt(nomArc + ".txt", usuario, contrasena, url, nombreBD,"Sqlite");
+                    } else if (tipoArc.equals("SQL") || tipoArc.equals("sql")) {
+                        cargaSC.cargaBDScript(nomArc + ".sql", usuario, contrasena, url, nombreBD,"Sqlite");
+                    }
+
+
+                    try(Connection conn = DriverManager.getConnection(url + nombreBD + ".db");
+                        Statement stmt = conn.createStatement()){
+
+                        stmt.executeUpdate("DELETE FROM "+NombreTabla+" WHERE "+ columnaCondicionada +" "+ condicion+" " +valor+ ";");
+
+                    }catch (SQLiteException a){
+                        System.out.println("Error de sintaxis");
+                    }
+
+
                 }
 
             case "Sqlite":
 
-                Auxiliar2 = Integer.parseInt(valor);
-
                 try(Connection conn = DriverManager.getConnection(url + nombreBD + ".db");
                     Statement stmt = conn.createStatement()){
-                    if(Auxiliar2 >= 0 && Auxiliar2 <= 32767){
-                        stmt.executeUpdate("DELETE FROM "+NombreTabla+" WHERE "+ columnaCondicionada +" "+ condicion+" " +Auxiliar2 + ";");
-                    }else {
-                        stmt.executeUpdate("DELETE FROM "+NombreTabla+" WHERE "+ columnaCondicionada +" "+ condicion+" "+"'"+valor+"'"+";");
-                    }
+
+                    stmt.executeUpdate("DELETE FROM "+NombreTabla+" WHERE "+ columnaCondicionada +" "+ condicion+" " +valor+ ";");
+
                 }catch (SQLiteException e){
                     System.out.println("Error de sintaxis");
                 }
@@ -279,7 +294,24 @@ public class CRUD {
                 }catch (SQLSyntaxErrorException e){
                     System.out.println("Error. No se encuentra ninguna tabla coincidente");
                 } catch (SQLException e) {
-                    e.printStackTrace();
+
+
+                    if (tipoArc.equals("Excel") || tipoArc.equals("excel") || tipoArc.equals("xlsx")) {
+                        arcXlsx.InsertarDatos(nomArc + ".xlsx", usuario, contrasena, url, nombreBD,"Sqlite");
+                    } else if (tipoArc.equals("Txt") || tipoArc.equals("txt")) {
+                        arcTXT.lecturaDatosTxt(nomArc + ".txt", usuario, contrasena, url, nombreBD,"Sqlite");
+                    } else if (tipoArc.equals("SQL") || tipoArc.equals("sql")) {
+                        cargaSC.cargaBDScript(nomArc + ".sql", usuario, contrasena, url, nombreBD,"Sqlite");
+                    }
+
+                    try(Connection conn = DriverManager.getConnection(url + nombreBD + ".db");
+                        Statement stmt = conn.createStatement()){
+                        stmt.executeUpdate("DELETE FROM "+NombreTabla+";");
+                    }catch (SQLiteException a){
+                        System.out.println("Error de sintaxis, tabla "+NombreTabla+" no encontrada");
+                    }catch (SQLException a){
+                    }
+
                 }
 
             case "Sqlite":
@@ -292,7 +324,6 @@ public class CRUD {
                 }catch (SQLException e){
                 }
 
-            case "Postgres":
             default:
         }
 
@@ -334,45 +365,56 @@ public class CRUD {
             }
         }
 
-        int Auxiliar2;
 
         switch (gestor){
             case "Mysql":
 
                 conect.conexionBD(usuario,contrasena,url,nombreBD);
                 Connection reg = conect.getConection();
-                Auxiliar2 = Integer.parseInt(valor);
                 try{
-                    if(Auxiliar2 >= 0 && Auxiliar2 <= 32767){
-                        PreparedStatement a = reg.prepareStatement("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+Auxiliar2+";");
-                        a.executeUpdate();
-                    }else{
-                        PreparedStatement a = reg.prepareStatement("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+"'"+valor+"'"+";");
-                        a.executeUpdate();
-                    }
+
+                    PreparedStatement a = reg.prepareStatement("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+valor+";");
+                    a.executeUpdate();
+
                 }catch (SQLSyntaxErrorException e){
                     System.out.println("Error. No se encuentra ninguna tabla coincidente");
                 } catch (SQLException e) {
-                    e.printStackTrace();
+
+
+                    if (tipoArc.equals("Excel") || tipoArc.equals("excel") || tipoArc.equals("xlsx")) {
+                        arcXlsx.InsertarDatos(nomArc + ".xlsx", usuario, contrasena, url, nombreBD,"Sqlite");
+                    } else if (tipoArc.equals("Txt") || tipoArc.equals("txt")) {
+                        arcTXT.lecturaDatosTxt(nomArc + ".txt", usuario, contrasena, url, nombreBD,"Sqlite");
+                    } else if (tipoArc.equals("SQL") || tipoArc.equals("sql")) {
+                        cargaSC.cargaBDScript(nomArc + ".sql", usuario, contrasena, url, nombreBD,"Sqlite");
+                    }
+
+                    try(Connection conn = DriverManager.getConnection(url + nombreBD + ".db");
+                        Statement stmt = conn.createStatement()){
+
+                        stmt.executeUpdate("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+valor+";");
+
+                    }catch (SQLiteException a){
+
+                    }catch (SQLException a){
+
+                    }
+
                 }
 
             case "Sqlite":
 
-                Auxiliar2 = Integer.parseInt(valor);
                 try(Connection conn = DriverManager.getConnection(url + nombreBD + ".db");
                     Statement stmt = conn.createStatement()){
-                    if(Auxiliar2 >= 0 && Auxiliar2 <= 32767){
-                        stmt.executeUpdate("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+Auxiliar2+";");
-                    }else{
-                        stmt.executeUpdate("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+"'"+valor+"'"+";");
-                    }
+
+                    stmt.executeUpdate("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+valor+";");
+
                 }catch (SQLiteException e){
 
                 }catch (SQLException e){
 
                 }
 
-            case "Postgrese":
             default:
         }
     }
@@ -414,44 +456,57 @@ public class CRUD {
         }
 
 
-        int Auxiliar2;
         switch (gestor){
             case "Mysql":
 
                 conect.conexionBD(usuario,contrasena,url,nombreBD);
                 Connection reg = conect.getConection();
-                Auxiliar2 = Integer.parseInt(valor);
                 try{
-                    if(Auxiliar2 >= 0 && Auxiliar2 <= 32767){
-                        PreparedStatement a = reg.prepareStatement("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+Auxiliar2+" WHERE "+ColumnaCondicionada+" "+condicion+" "+valorCambiado+";");
-                        a.executeUpdate();
-                    }else{
-                        PreparedStatement a = reg.prepareStatement("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+"'"+valor+"'"+" WHERE "+ColumnaCondicionada+" "+condicion+" "+valorCambiado+";");
-                        a.executeUpdate();
-                    }
+
+                    PreparedStatement a = reg.prepareStatement("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+valor+" WHERE "+ColumnaCondicionada+" "+condicion+" "+valorCambiado+";");
+                    a.executeUpdate();
+
                 }catch (SQLSyntaxErrorException e){
                     System.out.println("Error. No se encuentra ninguna tabla coincidente");
                 } catch (SQLException e) {
-                    e.printStackTrace();
+
+                    if (tipoArc.equals("Excel") || tipoArc.equals("excel") || tipoArc.equals("xlsx")) {
+                        arcXlsx.InsertarDatos(nomArc + ".xlsx", usuario, contrasena, url, nombreBD,"Sqlite");
+                    } else if (tipoArc.equals("Txt") || tipoArc.equals("txt")) {
+                        arcTXT.lecturaDatosTxt(nomArc + ".txt", usuario, contrasena, url, nombreBD,"Sqlite");
+                    } else if (tipoArc.equals("SQL") || tipoArc.equals("sql")) {
+                        cargaSC.cargaBDScript(nomArc + ".sql", usuario, contrasena, url, nombreBD,"Sqlite");
+                    }
+
+
+                    try(Connection conn = DriverManager.getConnection(url + nombreBD + ".db");
+                        Statement stmt = conn.createStatement()){
+
+                        stmt.executeUpdate("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+valor+" WHERE "+ColumnaCondicionada+" "+condicion+" "+valorCambiado+";");
+
+                    }catch (SQLiteException a){
+
+                    }catch (SQLException a){
+
+                    }
+
+
                 }
 
             case "Sqlite":
 
-                Auxiliar2 = Integer.parseInt(valor);
+
                 try(Connection conn = DriverManager.getConnection(url + nombreBD + ".db");
                     Statement stmt = conn.createStatement()){
-                    if(Auxiliar2 >= 0 && Auxiliar2 <= 32767){
-                        stmt.executeUpdate("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+Auxiliar2+" WHERE "+ColumnaCondicionada+" "+condicion+" "+valorCambiado+";");
-                    }else{
-                        stmt.executeUpdate("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+"'"+valor+"'"+" WHERE "+ColumnaCondicionada+" "+condicion+" "+valorCambiado+";");
-                    }
+
+                    stmt.executeUpdate("UPDATE "+NombreTabla+" SET "+NombreColumna+" = "+valor+" WHERE "+ColumnaCondicionada+" "+condicion+" "+valorCambiado+";");
+
                 }catch (SQLiteException e){
 
                 }catch (SQLException e){
 
                 }
 
-            case "Postgres":
             default:
         }
 

@@ -14,14 +14,15 @@ public class App {
     public static void main( String[] args ) throws IOException, SQLException {
 
         CRUD a = new CRUD();
-        a.DeleteDataCondicionado("Carrera","idcarrera","=","5");
+        a.Insert();
+
 
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
-        try(Connection conn = DriverManager.getConnection("jdbc:sqlite:horarios.db");
+        /*try(Connection conn = DriverManager.getConnection("jdbc:sqlite:horarios.db");
             Statement stmt = conn.createStatement()){
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Carrera;");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Usuarios;");
             while(rs.next()){
                 System.out.println(rs.getString(1));
             }
@@ -29,8 +30,8 @@ public class App {
         }catch (NullPointerException e){
             System.out.println("No tiene nada");
         }catch (SQLException e){
-            System.out.println("HOLA");
-        }
+            System.out.println("HOLA: "+e);
+        }*/
 ////////////////////////////////////////////////////////////////////////////////////////
         //TODO LO QUE ESTA DENTRO DE ESTOS GUIONES ES PARA VER LA TABLA QUE VAS A MODIFICAR SOLO TIENES QUE MOVER
         //LA LINEA 24 Y 26, LA LINEA 24 SIRVE PARA SELECCIONAR LA TABLA QUE QUIERE VER LOS CAMBIOS Y LA 26 SIRVE

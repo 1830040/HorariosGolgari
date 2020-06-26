@@ -175,8 +175,6 @@ public class ArchivoXLSX {
 
 
 
-            }else if(gestor.contains("Postgres")){
-
             }
 
 
