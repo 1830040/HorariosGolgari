@@ -120,9 +120,6 @@ public class ArchivoXLSX {
             //VERIFICANDO LA CONEXIÓN A LA BASE DE DATOS
             if(gestor.equals("Sqlite")){
 
-                System.out.println("SQLITE ENTRA");
-
-
 
 
                 for (int contador2 = 1; contador2 < scriptTerminado.size(); contador2++) {

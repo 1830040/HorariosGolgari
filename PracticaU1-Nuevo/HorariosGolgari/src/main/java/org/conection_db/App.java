@@ -22,15 +22,21 @@ public class App {
 ////////////////////////////////////////////////////////////////////////////////////////
         /*try(Connection conn = DriverManager.getConnection("jdbc:sqlite:horarios.db");
             Statement stmt = conn.createStatement()){
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Usuarios;");
+            ResultSet rs = stmt.executeQuery("SELECT \n" +
+                    "    name\n" +
+                    "FROM \n" +
+                    "    sqlite_master \n" +
+                    "WHERE \n" +
+                    "    type ='table' AND \n" +
+                    "    name NOT LIKE 'sqlite_%';");
             while(rs.next()){
                 System.out.println(rs.getString(1));
             }
 
         }catch (NullPointerException e){
-            System.out.println("No tiene nada");
+            System.out.println("No se encontro ningun dato: "+e);
         }catch (SQLException e){
-            System.out.println("HOLA: "+e);
+            System.out.println("Error de Sintaxis: " +e);
         }*/
 ////////////////////////////////////////////////////////////////////////////////////////
         //TODO LO QUE ESTA DENTRO DE ESTOS GUIONES ES PARA VER LA TABLA QUE VAS A MODIFICAR SOLO TIENES QUE MOVER
@@ -40,10 +46,6 @@ public class App {
         //AHORA LO QUE TE PIDO ES QUE PRUBES TODOS LOS CRUD QUE HICE DE SQLITE Y YA, LOS PROPIOS METODOS TE VAN A DECIR
         //QUE OCUPAN
 
-
-
-        /*CRUD a = new CRUD();
-        a.DropTable("disponibilidad");*/
 
         /*
         a.UpadteSinCondicion("nomTabla","nomColumna","valor");

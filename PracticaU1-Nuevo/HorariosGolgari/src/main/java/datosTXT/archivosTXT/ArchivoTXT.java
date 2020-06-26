@@ -1,17 +1,15 @@
 package datosTXT.archivosTXT;
 
-import com.mysql.cj.x.protobuf.MysqlxCursor;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
-import javax.swing.*;
+import datosXLSX.archivosXLSX.PlantillaExcel;
+import sqlConn.archivosSQL.ConectarBD;
 import java.io.*;
+import java.sql.*;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.ExecutionException;
 
 public class ArchivoTXT {
 
     PlantillaTxt pt = new PlantillaTxt();
+    ConectarBD conect = new ConectarBD();
     static ArrayList<String> comandosSinBDTxt = new ArrayList<String>();
     static ArrayList<String> scriptTerminadoTxt = new ArrayList<String>();
 
@@ -29,7 +27,7 @@ public class ArchivoTXT {
         String datosTabla[];
         String filas[];
         String valores[];
-        int contador = 1, vColTablas = 0, a = 0, contadorDelContador = 0;
+        int contador = 1, vColTablas = 1, a = 0, contadorDelContador = 0;
 
         comandosSinBDTxt.add("CREATE DATABASE IF NOT EXISTS HORARIOS;");
 
@@ -76,10 +74,10 @@ public class ArchivoTXT {
                             nomTabla = linea.substring(linea.indexOf("{") + 1, linea.indexOf("}"));
                             comandosSinBDTxt.add(a,"CREATE TABLE IF NOT EXISTS " + nomTabla + " (");
 
-                        //OBTENIENDO COLUMNAS DE LA TABLA
+                            //OBTENIENDO COLUMNAS DE LA TABLA
                         }else if (linea.contains("columnas") && linea.contains("{") && linea.contains("}")){
                             columnas = linea.substring(linea.indexOf("{") + 1, linea.indexOf("}"));
-                            comandosSinBDTxt.add(a,comandosSinBDTxt.get(a) + columnas + ");");
+                            comandosSinBDTxt.add(a,comandosSinBDTxt.get(a) + columnas);
 
                             //OBTENIENDO LAS COLUMNAS DE CADA TABLA
                             separacion = columnas.split(" ");
@@ -94,56 +92,41 @@ public class ArchivoTXT {
                                 }
                             }
 
-                        //OBTENIENDO LOS VALORES DE CADA COLUMNA
+                            //OBTENIENDO LOS VALORES DE CADA COLUMNA
                         }else if(linea.contains("{") && linea.contains("}") ){
                             //ESTO CONTROLA EL NUMERO DE COLUMNAS QUE CONTIENE LA TABLA ACTUAL
                             filas = columnas.split(",");
-                            for(int yy = 0; yy < filas.length; yy++) {
+                            for(int yy = 0; yy < (filas.length - (filas.length - 1)); yy++) {
                                 linea = datosTabla[t];
                                 //ESTO CONTROLA LOS VALORES POR FILA DE LAS COLUMNAS DE LAS TABLAS
                                 valores = linea.substring(linea.indexOf("{")+1,linea.indexOf("}")).split("/");
                                 for (int tt = 0; tt < valores.length; tt++) {
-                                    //System.out.println(valores[tt]);
+
                                     a++;
+                                    contadorDelContador++;
 
-                                    if(contador == 1 && (yy + 1 < filas.length)) {
-                                        System.out.println(a);
+                                    if(contador == 1){
                                         comandosSinBDTxt.add(a, "INSERT INTO " + nomTabla + " ("  + columnas + ") values ("+ valores[tt]);
-                                        vColTablas++;
-                                    }else if((contador == 2 && (yy + 1 < filas.length)) ){
-                                        comandosSinBDTxt.add(a, comandosSinBDTxt.get(a) + "," + valores[tt]);
-                                        //comandosSinBDTxt.remove(a+1);
-                                       // System.out.println(comandosSinBDTxt.get(a+1));
-                                        vColTablas++;
-                                    }else if(contador >= 2 && (yy + 1 == filas.length)) {
-                                        System.out.println(a);
-                                        comandosSinBDTxt.add(a, comandosSinBDTxt.get(a) + "," + valores[tt] + ");");
-                                         vColTablas++;
-                                         if(comandosSinBDTxt.get(a).contains(comandosSinBDTxt.get(a+1))){
-                                             comandosSinBDTxt.remove(a+1);
-                                         }
+                                    }else if(contador >= 1){
 
-                                       /* System.out.println(a);
-                                        System.out.println(comandosSinBDTxt.get(a) + "posicion: "+ a);
-                                        System.out.println(comandosSinBDTxt.get(a+1)+ "posicion: "+ (a+1));
-                                        System.out.println(comandosSinBDTxt.get(a+2)+ "posicion: "+ (a+2));
-                                        System.out.println(comandosSinBDTxt.get(a+3)+ "posicion: "+ (a+3));
-                                        System.out.println(comandosSinBDTxt.get(a+4)+ "posicion: "+ (a+4));
-                                        System.out.println("---------Gatitos---------------");*/
+                                        if(comandosSinBDTxt.get(a-1).contains(comandosSinBDTxt.get(a))){
+                                            comandosSinBDTxt.remove(a);
+                                        }
+                                        comandosSinBDTxt.add(a, comandosSinBDTxt.get(a)+", "+ valores[tt]);
                                     }
 
-                                    if(vColTablas == valores.length && (yy + 1 < filas.length)) {
-                                        contador++;
-                                    }else if(vColTablas == valores.length &&(yy + 1 == filas.length)){
+
+                                    if (tt + 1 == valores.length && filas.length == vColTablas) {
                                         contador = 1;
+                                        contadorDelContador = 0;
                                         vColTablas = 0;
+                                    }else if (tt + 1 == valores.length && filas.length > yy + 1) {
+                                        a = a - contadorDelContador;
+                                        contadorDelContador = 0;
+                                        contador++;
                                     }
                                 }
-                                System.out.println("Cortes, a vale: "+ a + " Y las columnas valen: " + vColTablas);
-                                a = a - vColTablas;
-                                System.out.println("Cortes, a vale: "+ a + " Y las columnas valen: " + vColTablas);
-                                vColTablas=0;
-                                t++;
+                                vColTablas++;
                             }
                         }
                     }
@@ -168,17 +151,74 @@ public class ArchivoTXT {
                 }
             }
         }
-
         //GUARDANDO LOS VALORES ALMACENADOS EN UN SCRIPT
         for (int oo = 0; oo < a; oo++){
-           scriptTerminadoTxt.add(comandosSinBDTxt.get(oo));
+            if(!(oo == 0)){
+                scriptTerminadoTxt.add(comandosSinBDTxt.get(oo) + ");");
+            }else{
+                scriptTerminadoTxt.add(comandosSinBDTxt.get(oo));
+            }
+        }
+        //VERIFICANDO LA CONEXIÓN A LA BASE DE DATOS
+
+        switch (gestor){
+            case "Mysql":
+
+
+                conect.conexionBD(user, password, url, NombreBaseDeDatos);
+                Connection reg = conect.getConection();
+
+                for (int contador2 = 0; contador2 < scriptTerminadoTxt.size(); contador2++) {
+                    try {
+                        //PREPARANDO LA SENTENCIA PARA SER EJECUTADA LA LINEA DE COMANDO Y CREAR, AGREGAR NUEVOS DATOS A LA BASE DE DATOS
+                        PreparedStatement b = reg.prepareStatement(scriptTerminadoTxt.get(contador2));
+                        b.executeUpdate();
+                    } catch (SQLSyntaxErrorException e) {
+                        System.out.println("Error al ingresar datos con un txt");
+                        System.out.println("Usar la platilla Generada");
+                        PlantillaTxt ptxt = new PlantillaTxt();
+                        ptxt.EscribirTxt();
+                    } catch (SQLIntegrityConstraintViolationException d) {
+                        System.out.println("Error al ingresar datos con un txt");
+                        System.out.println("Datos duplicados");
+                    } catch (NullPointerException e) {
+                        System.out.println("Ruta no encontrada para cargar los datos del txt");
+                    } catch (SQLException e) {
+                        System.out.println("Error de sintaxis");
+                    }
+                }
+
+
+                break;
+            case "Sqlite":
+
+
+                for (int contador2 = 1; contador2 < scriptTerminadoTxt.size(); contador2++) {
+                    try(Connection conn = DriverManager.getConnection(url+NombreBaseDeDatos+".db");
+                        Statement stmt = conn.createStatement()) {
+                        //PREPARANDO LA SENTENCIA PARA SER EJECUTADA LA LINEA DE COMANDO Y CREAR, AGREGAR NUEVOS DATOS A LA BASE DE DATOS
+                        stmt.execute(scriptTerminadoTxt.get(contador2));
+                    } catch (SQLSyntaxErrorException e) {
+                        System.out.println("Error al ingresar datos");
+                        System.out.println("Usar la platilla Generada");
+                        PlantillaExcel pex = new PlantillaExcel();
+                        pex.EscribirEXCEL();
+                    } catch (SQLIntegrityConstraintViolationException d) {
+                        System.out.println("Error al ingresar datos");
+                        System.out.println("Datos duplicados");
+                    } catch (NullPointerException e) {
+                        System.out.println("Ruta no encontrada para cargar los datos del xlsx");
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    }
+                }
+
+
+                break;
+            default:
         }
 
-        //MOSTRANDO LOS VALORES ALMACENADOS
-        for (int oo = 0; oo < a; oo++){
-            System.out.println(scriptTerminadoTxt.get(oo));
-        }
+
 
     }
 }
-
