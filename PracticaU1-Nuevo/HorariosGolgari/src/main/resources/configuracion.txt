@@ -1,4 +1,4 @@
-gestor {Mysql}
+gestor (Mysql, Sqlite) {Mysql}
 user {root}
 password (Si no tiene ponga null) {null}
 nombre_bd {horarios}
