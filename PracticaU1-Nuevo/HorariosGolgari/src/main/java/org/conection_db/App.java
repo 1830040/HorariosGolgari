@@ -13,13 +13,16 @@ public class App {
 
     public static void main( String[] args ) throws IOException, SQLException {
 
+
+
+
         CRUD a = new CRUD();
-        a.Insert();
+        a.SelectCondicionado("carrera","idcarrera,nombre_carrera",
+                "idcarrera",">=","2");
 
 
 
-
-////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////a.Insert(); a.DropTable("carrera");
         /*try(Connection conn = DriverManager.getConnection("jdbc:sqlite:horarios.db");
             Statement stmt = conn.createStatement()){
             ResultSet rs = stmt.executeQuery("SELECT \n" +
@@ -29,6 +32,8 @@ public class App {
                     "WHERE \n" +
                     "    type ='table' AND \n" +
                     "    name NOT LIKE 'sqlite_%';");
+
+
             while(rs.next()){
                 System.out.println(rs.getString(1));
             }
