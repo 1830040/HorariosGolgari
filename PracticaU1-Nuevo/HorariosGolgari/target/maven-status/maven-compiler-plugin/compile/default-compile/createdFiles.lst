@@ -1,3 +1,15 @@
+<<<<<<< HEAD
 org\conection_db\Login1.class
 configuraciones\ArchivoConfig\CargarScript.class
 sqlConn\archivosSQL\ConectarBD.class
+=======
+sqliteConn\archivosSQLite\ConectarSQLite.class
+datosTXT\archivosTXT\ArchivoTXT.class
+configuraciones\ArchivoConfig\CRUD.class
+configuraciones\ArchivoConfig\CargarScript.class
+datosXLSX\archivosXLSX\ArchivoXLSX.class
+org\conection_db\App.class
+sqlConn\archivosSQL\ConectarBD.class
+datosTXT\archivosTXT\PlantillaTxt.class
+datosXLSX\archivosXLSX\PlantillaExcel.class
+>>>>>>> 56e8088f37474f0b4cda36e37f94e9f71cc2fb16

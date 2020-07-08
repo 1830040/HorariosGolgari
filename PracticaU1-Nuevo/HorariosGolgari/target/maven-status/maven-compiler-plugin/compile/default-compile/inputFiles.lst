@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\salda\Desktop\HorariosGolgari-master\HorariosGolgari-master\PracticaU1-Nuevo\HorariosGolgari\src\main\java\org\conection_db\Horarios.java
 C:\Users\salda\Desktop\HorariosGolgari-master\HorariosGolgari-master\PracticaU1-Nuevo\HorariosGolgari\src\main\java\datosTXT\archivosTXT\PlantillaTxt.java
 C:\Users\salda\Desktop\HorariosGolgari-master\HorariosGolgari-master\PracticaU1-Nuevo\HorariosGolgari\src\main\java\org\conection_db\Login1.java
@@ -9,3 +10,14 @@ C:\Users\salda\Desktop\HorariosGolgari-master\HorariosGolgari-master\PracticaU1-
 C:\Users\salda\Desktop\HorariosGolgari-master\HorariosGolgari-master\PracticaU1-Nuevo\HorariosGolgari\src\main\java\datosXLSX\archivosXLSX\ArchivoXLSX.java
 C:\Users\salda\Desktop\HorariosGolgari-master\HorariosGolgari-master\PracticaU1-Nuevo\HorariosGolgari\src\main\java\datosTXT\archivosTXT\ArchivoTXT.java
 C:\Users\salda\Desktop\HorariosGolgari-master\HorariosGolgari-master\PracticaU1-Nuevo\HorariosGolgari\src\main\java\datosXLSX\archivosXLSX\PlantillaExcel.java
+=======
+C:\Users\edu_t\Desktop\POO\CosasParaEliminar\HorariosGolgari\PracticaU1-Nuevo\HorariosGolgari\src\main\java\datosXLSX\archivosXLSX\ArchivoXLSX.java
+C:\Users\edu_t\Desktop\POO\CosasParaEliminar\HorariosGolgari\PracticaU1-Nuevo\HorariosGolgari\src\main\java\org\conection_db\App.java
+C:\Users\edu_t\Desktop\POO\CosasParaEliminar\HorariosGolgari\PracticaU1-Nuevo\HorariosGolgari\src\main\java\datosTXT\archivosTXT\PlantillaTxt.java
+C:\Users\edu_t\Desktop\POO\CosasParaEliminar\HorariosGolgari\PracticaU1-Nuevo\HorariosGolgari\src\main\java\sqlConn\archivosSQL\ConectarBD.java
+C:\Users\edu_t\Desktop\POO\CosasParaEliminar\HorariosGolgari\PracticaU1-Nuevo\HorariosGolgari\src\main\java\configuraciones\ArchivoConfig\CRUD.java
+C:\Users\edu_t\Desktop\POO\CosasParaEliminar\HorariosGolgari\PracticaU1-Nuevo\HorariosGolgari\src\main\java\configuraciones\ArchivoConfig\CargarScript.java
+C:\Users\edu_t\Desktop\POO\CosasParaEliminar\HorariosGolgari\PracticaU1-Nuevo\HorariosGolgari\src\main\java\datosXLSX\archivosXLSX\PlantillaExcel.java
+C:\Users\edu_t\Desktop\POO\CosasParaEliminar\HorariosGolgari\PracticaU1-Nuevo\HorariosGolgari\src\main\java\sqliteConn\archivosSQLite\ConectarSQLite.java
+C:\Users\edu_t\Desktop\POO\CosasParaEliminar\HorariosGolgari\PracticaU1-Nuevo\HorariosGolgari\src\main\java\datosTXT\archivosTXT\ArchivoTXT.java
+>>>>>>> 56e8088f37474f0b4cda36e37f94e9f71cc2fb16
