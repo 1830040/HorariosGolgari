@@ -1,27 +1,31 @@
 package org.conection_db;
 
 import configuraciones.ArchivoConfig.*;
+import javafx.application.Application;
 import java.io.IOException;
-import java.sql.SQLException;
+import java.sql.*;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * Hello world!
  *
  */
-public class App {
+public class App extends Application
+{
+    public static void main( String[] args )
+    {
+        launch();
+    }
 
-    public static void main( String[] args ) throws IOException, SQLException {
-
-        CRUD a = new CRUD();
-        a.InsertarDatos();
-        /*
-        a.UpadteSinCondicion("nomTabla","nomColumna","valor");
-        a.UpadteCondicionado("nomTabla","nomColumna","valor","columnaCondicionada","condicion","valorDeCambio");
-        a.DeleteDataSinCondicion("nomTabla");
-        a.DeleteDataCondicionado("nomTabla","columnaCondicionada", "condicion","valor");
-        a.DropTable("nomTabla");
-        */
-
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage = FXMLLoader.load(getClass().getResource("/FXML/Horarios.fxml"));
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
     }
 
 }

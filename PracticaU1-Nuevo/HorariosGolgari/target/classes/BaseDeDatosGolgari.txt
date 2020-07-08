@@ -1,6 +1,6 @@
 TABLA {Grupos} #
 COLUMNAS {clv_grupo VARCHAR (20) Not Null,turno boolean} #
-CLV_GRUPO {'ITI-27504'/'IM-27534'/'ISA-27502'/'ITM-27503/'ITI-27501'} #
+CLV_GRUPO {'ITI-27504'/'IM-27534'/'ISA-27502'/'ITM-27503'/'ITI-27501'} #
 TURNO {True/False/True/False/False} #
 !
 TABLA {Carrera} #
@@ -32,7 +32,7 @@ CONTRATO {'PTC'/'PTC'/'PTA'/'PTC'/'PTC'} #
 TABLA {Plan_estudios} #
 COLUMNAS {clv_plan VARCHAR(10) NOT NULL,nombre_plan VARCHAR(45) NOT NULL,nivel VARCHAR(3) NOT NULL,id_carrera TINYINT NOT NULL} #
 CLV_PLAN {'ITI-2010'/'ITI-2018'/'ITM-2010'/'ITM-2018'/'ISA-2010'} #
-NOMBRE_PLAN {'ITI2010/ITI2018/ITM2010/ITM2018/ISA2010'} #
+NOMBRE_PLAN {'ITI2010'/'ITI2018'/'ITM2010'/'ITM2018'/'ISA2010'} #
 NIVEL {'ING'/'ING'/'ING'/'ING'/'ING'} #
 ID_CARRERA {2/2/3/3/4} #
 !
@@ -52,7 +52,7 @@ COLUMNAS {id_equipo INT(11) NOT NULL,id_categoria INT(11),nombre VARCHAR(100) NO
 ID_EQUIPO {1/2} #
 ID_CATEGORIA {1/2} #
 NOMBRE {'Proyector de Video EVL GP9'/'Mesa Banco'} #
-DESCRIPCION {'Blanco, imágenes hasta 120"', perilla para regular el enfoque'/'Plastico gris, asiento para una persona, compartimento para libros'} #
+DESCRIPCION {'Blanco imagenes hasta 120" perilla para regular el enfoque'/'Plastico gris asiento para una persona compartimento para libros'} #
 !
 TABLA {Prestamos} #
 COLUMNAS {clv_usuario varchar (50) Not Null,idcarrera TINYINT Not Null} #
@@ -60,7 +60,7 @@ CLV_USUARIO {'gsuarezv@upv.edu.mx'/'ojassol@upv.edu.mx'/'jrodriguezg@upv.edu.mx'
 ID_CARRERA {1/2/3/4/5} #
 !
 TABLA {Login} #
-COLUMNAS {clv_usuario VARCHAR(50),pass_usuario CHAR(50),tipo_usuario CHAR(4) Not Null DEFAULT 'PROF' CHECK} #
+COLUMNAS {clv_usuario VARCHAR(50),pass_usuario CHAR(50),tipo_usuario CHAR(4) Not Null} #
 CLV_USUARIO {'gsuarezv@upv.edu.mx'/'ojassol@upv.edu.mx'/'jrodriguezg@upv.edu.mx'/'rmachuchoc@upv.edu.mx'/'etorresr@upv.edu.mx'} #
 PASS_USUARIO {'user'/'user'/'user'/'user'/'user'} #
 TIPO_USUARIO {'PROF'/'PROF'/'PROF'/'PROF'/'DIRE'} #
@@ -87,7 +87,7 @@ CLV_USUARIO {'ojassol@upv.edu.mx'/'jrodriguezg@upv.edu.mx'/'rmachuchoc@upv.edu.m
 !
 TABLA {Grupo_materia_profesor} #
 COLUMNAS {clv_grupo VARCHAR (10) Not Null,clv_materia VARCHAR (10) Not Null,clv_usuario VARCHAR (50) Not Null} #
-CLV_GRUPO {'ITI 6-2'/'ITI 6-1'/'ITI 5-2'/'ITI 5-1'/ITM 7-1} #
+CLV_GRUPO {'ITI 6-2'/'ITI 6-1'/'ITI 5-2'/'ITI 5-1'/'ITM 7-1'} #
 CLV_MATERIA {'ITI-27504'/'ITI-27506'/'ITI-27505'/'ITI-27503'/'ITM-26482'} #
 CLV_USUARIO {'spolancom@upv.edu.mx'/'ojassol@upv.edu.mx'/'mbutronb@upv.edu.mx'/'ipulidop@upv.edu.mx'/'jrodriguezg@upv.edu.mx'} #
 !

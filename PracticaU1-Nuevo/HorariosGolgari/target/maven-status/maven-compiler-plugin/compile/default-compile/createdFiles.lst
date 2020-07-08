@@ -1,8 +1,3 @@
-sqlConn\archivosSQL\ConectarBD.class
-datosTXT\archivosTXT\PlantillaTxt.class
-datosTXT\archivosTXT\ArchivoTXT.class
-datosXLSX\archivosXLSX\PlantillaExcel.class
-configuraciones\ArchivoConfig\CRUD.class
+org\conection_db\Login1.class
 configuraciones\ArchivoConfig\CargarScript.class
-datosXLSX\archivosXLSX\ArchivoXLSX.class
-org\conection_db\App.class
+sqlConn\archivosSQL\ConectarBD.class

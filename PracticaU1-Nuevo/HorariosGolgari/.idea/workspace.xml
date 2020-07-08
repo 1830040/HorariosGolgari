@@ -36,10 +36,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../jfoenix-8.0.10.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.37356323" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunAnythingCache">
@@ -69,6 +69,11 @@
       <workItem from="1592588760057" duration="1640000" />
       <workItem from="1592633748113" duration="9234000" />
       <workItem from="1592677374992" duration="13562000" />
+      <workItem from="1593493596943" duration="939000" />
+      <workItem from="1593494547444" duration="21000" />
+      <workItem from="1593494597249" duration="720000" />
+      <workItem from="1593495555462" duration="598000" />
+      <workItem from="1593753463715" duration="1156000" />
     </task>
     <servers />
   </component>
@@ -76,38 +81,46 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="389" y="109" key="FileChooserDialogImpl" timestamp="1592176857465">
+    <state x="829" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1593494928000">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="109" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592176857465" />
-    <state width="1323" height="272" key="GridCell.Tab.0.bottom" timestamp="1592724355360">
+    <state x="829" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1593494928000" />
+    <state x="389" y="109" key="FileChooserDialogImpl" timestamp="1593756014847">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="272" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592724355360" />
-    <state width="1323" height="272" key="GridCell.Tab.0.center" timestamp="1592724355360">
+    <state x="389" y="109" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1593756014847" />
+    <state width="1323" height="148" key="GridCell.Tab.0.bottom" timestamp="1593756345324">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="272" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592724355360" />
-    <state width="1323" height="272" key="GridCell.Tab.0.left" timestamp="1592724355360">
+    <state width="1323" height="148" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593756345324" />
+    <state width="1323" height="148" key="GridCell.Tab.0.center" timestamp="1593756345323">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="272" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592724355360" />
-    <state width="1323" height="272" key="GridCell.Tab.0.right" timestamp="1592724355360">
+    <state width="1323" height="148" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593756345323" />
+    <state width="1323" height="148" key="GridCell.Tab.0.left" timestamp="1593756345323">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="272" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592724355360" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1592223499619">
+    <state width="1323" height="148" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593756345323" />
+    <state width="1323" height="148" key="GridCell.Tab.0.right" timestamp="1593756345324">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592223499619" />
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1592679481036">
+    <state width="1323" height="148" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593756345324" />
+    <state x="263" y="103" key="IDE.errors.dialog" timestamp="1593494526569">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592679481036" />
-    <state x="399" y="173" width="672" height="677" key="run.anything.popup" timestamp="1592724225919">
+    <state x="263" y="103" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1593494526569" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1593756019684">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="399" y="173" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1592724225919" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593756019684" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1593753615971">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1593753615971" />
+    <state x="399" y="173" width="672" height="677" key="run.anything.popup" timestamp="1593756315429">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="399" y="173" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1593756315429" />
     <state x="346" y="49" key="search.everywhere.popup" timestamp="1592194652193">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
