@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="377.0" fitWidth="673.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@2.PNG" />
+         </image>
+      </ImageView>
+      <TextField fx:id="contra" layoutX="218.0" layoutY="216.0" opacity="0.0" prefHeight="25.0" prefWidth="227.0" style="-fx-background-color: white;" />
+      <Button fx:id="iniciar" layoutX="218.0" layoutY="256.0" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="227.0" />
+      <Button fx:id="recuperar" layoutX="292.0" layoutY="303.0" minHeight="-Infinity" mnemonicParsing="false" opacity="0.0" prefHeight="13.0" prefWidth="83.0" text="Button" />
+   </children>
+</Pane>
