@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="935.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.conectio_db.Login1">
+   <children>
+      <ImageView fitHeight="70.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" />
+      <Label prefHeight="70.0" prefWidth="935.0" style="-fx-background-color: #002060;" />
+      <Label fx:id="LUsuarioMaestro" layoutX="717.0" layoutY="36.0" prefHeight="26.0" prefWidth="182.0" text="USUARIO DEL MAESTRO" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="LAulas" layoutX="65.0" layoutY="419.0" prefHeight="26.0" prefWidth="135.0" textFill="#00376f">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="-19.0" layoutY="70.0" prefHeight="459.0" prefWidth="227.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0 );">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="25.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="BDisponiblidad" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="90.0" mnemonicParsing="false" onAction="#ABDisponiblidad" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Disponiblidad" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BPerfil" alignment="BASELINE_LEFT" layoutX="54.0" layoutY="52.0" mnemonicParsing="false" onAction="#ABPerfil" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Perfil" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BMaterias" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="130.0" mnemonicParsing="false" onAction="#ABMaterias" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Materias" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BMaestros" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="165.0" mnemonicParsing="false" onAction="#ABMaestros" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Maestros" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BPlanEstudios" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="203.0" mnemonicParsing="false" onAction="#ABPlanEstudios" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Plan de Estudios" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BAulas" alignment="BASELINE_LEFT" layoutX="52.0" layoutY="242.0" mnemonicParsing="false" onAction="#ABAulas" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Aulas" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BGrupos" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="279.0" mnemonicParsing="false" onAction="#ABGrupos" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Grupos" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BHorarios" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="320.0" mnemonicParsing="false" onAction="#ABHorarios" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Horarios" textFill="#06b912">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BPuntosConfianza" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="361.0" mnemonicParsing="false" onAction="#ABPuntosConfianza" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Puntos de Confianza" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="25.0" layoutY="8.0" prefHeight="40.0" prefWidth="182.0" text="N a v e g a c i ó n" textFill="#686060">
+               <font>
+                  <Font name="Franklin Gothic Book" size="22.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Line endX="82.0" endY="1.0" layoutX="135.0" layoutY="45.0" smooth="false" startX="-109.0" startY="1.0" stroke="#686060" strokeWidth="2.0" />
+            <ImageView fx:id="IPerfil" fitHeight="25.0" fitWidth="25.0" layoutX="26.0" layoutY="56.0">
+               <image>
+                  <Image url="@../Mockup/Perfil.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IDisponibilidad" fitHeight="28.0" fitWidth="28.0" layoutX="25.0" layoutY="94.0">
+               <image>
+                  <Image url="@../Mockup/Disponibilidad.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IMaterias" fitHeight="28.0" fitWidth="28.0" layoutX="26.0" layoutY="135.0">
+               <image>
+                  <Image url="@../Mockup/Materias.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IMaestros" fitHeight="28.0" fitWidth="28.0" layoutX="27.0" layoutY="169.0">
+               <image>
+                  <Image url="@../Mockup/Maestros.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IPlanEstudios" fitHeight="28.0" fitWidth="37.0" layoutX="22.0" layoutY="209.0">
+               <image>
+                  <Image url="@../Mockup/PlanEstudios.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IAulas" fitHeight="28.0" fitWidth="28.0" layoutX="27.0" layoutY="246.0">
+               <image>
+                  <Image url="@../Mockup/Aula.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IGrupo" fitHeight="26.0" fitWidth="29.0" layoutX="27.0" layoutY="284.0">
+               <image>
+                  <Image url="@../Mockup/Grupos.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IHorarios" fitHeight="28.0" fitWidth="29.0" layoutX="27.0" layoutY="324.0">
+               <image>
+                  <Image url="@../Mockup/Horarios.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IPuntosConfianza" fitHeight="26.0" fitWidth="31.0" layoutX="26.0" layoutY="366.0">
+               <image>
+                  <Image url="@../Mockup/PuntosConfianza.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="70.0" fitWidth="125.0">
+         <image>
+            <Image url="@../Mockup/LogoUPV.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IOpciones" fitHeight="16.0" fitWidth="16.0" layoutX="899.0" layoutY="41.0">
+         <image>
+            <Image url="@../Mockup/BotonOpciones.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="uno_uno" layoutX="500.0" layoutY="113.0" mnemonicParsing="false" onAction="#uno_uno_Metodo" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="uno_dos" layoutX="584.0" layoutY="113.0" mnemonicParsing="false" onAction="#uno_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="uno_tres" layoutX="668.0" layoutY="113.0" mnemonicParsing="false" onAction="#uno_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="uno_cuatro" layoutX="752.0" layoutY="113.0" mnemonicParsing="false" onAction="#uno_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="uno_cinco" layoutX="836.0" layoutY="113.0" mnemonicParsing="false" onAction="#uno_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="dos_uno" layoutX="500.0" layoutY="140.0" mnemonicParsing="false" onAction="#dos_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="dos_dos" layoutX="584.0" layoutY="140.0" mnemonicParsing="false" onAction="#dos_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="dos_tres" layoutX="668.0" layoutY="140.0" mnemonicParsing="false" onAction="#dos_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="dos_cuatro" layoutX="752.0" layoutY="140.0" mnemonicParsing="false" onAction="#dos_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="dos_cinco" layoutX="836.0" layoutY="140.0" mnemonicParsing="false" onAction="#dos_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="tres_uno" layoutX="500.0" layoutY="167.0" mnemonicParsing="false" onAction="#tres_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="tres_dos" layoutX="584.0" layoutY="167.0" mnemonicParsing="false" onAction="#tres_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="tres_tres" layoutX="668.0" layoutY="167.0" mnemonicParsing="false" onAction="#tres_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="tres_cuatro" layoutX="752.0" layoutY="167.0" mnemonicParsing="false" onAction="#tres_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="tres_cinco" layoutX="836.0" layoutY="167.0" mnemonicParsing="false" onAction="#tres_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cuatro_uno" layoutX="500.0" layoutY="194.0" mnemonicParsing="false" onAction="#cuatro_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cuatro_dos" layoutX="584.0" layoutY="194.0" mnemonicParsing="false" onAction="#cuatro_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cuatro_tres" layoutX="668.0" layoutY="194.0" mnemonicParsing="false" onAction="#cuatro_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cuatro_cuatro" layoutX="752.0" layoutY="194.0" mnemonicParsing="false" onAction="#cuatro_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cuatro_cinco" layoutX="836.0" layoutY="194.0" mnemonicParsing="false" onAction="#cuatro_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cinco_uno" layoutX="500.0" layoutY="224.0" mnemonicParsing="false" onAction="#cinco_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cinco_dos" layoutX="584.0" layoutY="224.0" mnemonicParsing="false" onAction="#cinco_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cinco_tres" layoutX="668.0" layoutY="224.0" mnemonicParsing="false" onAction="#cinco_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cinco_cuatro" layoutX="752.0" layoutY="224.0" mnemonicParsing="false" onAction="#cinco_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="cinco_cinco" layoutX="836.0" layoutY="224.0" mnemonicParsing="false" onAction="#cinco_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="seis_uno" layoutX="500.0" layoutY="251.0" mnemonicParsing="false" onAction="#seis_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="seis_dos" layoutX="584.0" layoutY="251.0" mnemonicParsing="false" onAction="#seis_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="seis_tres" layoutX="668.0" layoutY="251.0" mnemonicParsing="false" onAction="#seis_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="seis_cuatro" layoutX="752.0" layoutY="251.0" mnemonicParsing="false" onAction="#seis_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="seis_cinco" layoutX="836.0" layoutY="251.0" mnemonicParsing="false" onAction="#seis_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="siete_uno" layoutX="500.0" layoutY="278.0" mnemonicParsing="false" onAction="#siete_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="siete_dos" layoutX="584.0" layoutY="278.0" mnemonicParsing="false" onAction="#siete_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="siete_tres" layoutX="668.0" layoutY="278.0" mnemonicParsing="false" onAction="#siete_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="siete_cuatro" layoutX="752.0" layoutY="278.0" mnemonicParsing="false" onAction="#siete_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="siete_cinco" layoutX="836.0" layoutY="278.0" mnemonicParsing="false" onAction="#siete_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="ocho_uno" layoutX="500.0" layoutY="308.0" mnemonicParsing="false" onAction="#ocho_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="ocho_dos" layoutX="584.0" layoutY="308.0" mnemonicParsing="false" onAction="#ocho_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="ocho_tres" layoutX="668.0" layoutY="308.0" mnemonicParsing="false" onAction="#ocho_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="ocho_cuatro" layoutX="752.0" layoutY="308.0" mnemonicParsing="false" onAction="#ocho_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="ocho_cinco" layoutX="836.0" layoutY="308.0" mnemonicParsing="false" onAction="#ocho_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="nueve_uno" layoutX="500.0" layoutY="335.0" mnemonicParsing="false" onAction="#nueve_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="nueve_dos" layoutX="584.0" layoutY="335.0" mnemonicParsing="false" onAction="#nueve_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="nueve_tres" layoutX="668.0" layoutY="335.0" mnemonicParsing="false" onAction="#nueve_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="nueve_cuatro" layoutX="752.0" layoutY="335.0" mnemonicParsing="false" onAction="#nueve_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="nueve_cinco" layoutX="836.0" layoutY="335.0" mnemonicParsing="false" onAction="#nueve_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="diez_uno" layoutX="500.0" layoutY="362.0" mnemonicParsing="false" onAction="#diez_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="diez_dos" layoutX="584.0" layoutY="362.0" mnemonicParsing="false" onAction="#diez_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="diez_tres" layoutX="668.0" layoutY="362.0" mnemonicParsing="false" onAction="#diez_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="diez_cuatro" layoutX="752.0" layoutY="362.0" mnemonicParsing="false" onAction="#diez_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="diez_cinco" layoutX="836.0" layoutY="362.0" mnemonicParsing="false" onAction="#diez_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="once_uno" layoutX="500.0" layoutY="389.0" mnemonicParsing="false" onAction="#once_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="once_dos" layoutX="584.0" layoutY="389.0" mnemonicParsing="false" onAction="#once_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="once_tres" layoutX="668.0" layoutY="389.0" mnemonicParsing="false" onAction="#once_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="once_cuatro" layoutX="752.0" layoutY="389.0" mnemonicParsing="false" onAction="#once_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="once_cinco" layoutX="836.0" layoutY="389.0" mnemonicParsing="false" onAction="#once_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="doce_uno" layoutX="500.0" layoutY="419.0" mnemonicParsing="false" onAction="#doce_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="doce_dos" layoutX="584.0" layoutY="419.0" mnemonicParsing="false" onAction="#doce_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="doce_tres" layoutX="668.0" layoutY="419.0" mnemonicParsing="false" onAction="#doce_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="doce_cuatro" layoutX="752.0" layoutY="419.0" mnemonicParsing="false" onAction="#doce_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="doce_cinco" layoutX="836.0" layoutY="419.0" mnemonicParsing="false" onAction="#doce_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="trece_uno" layoutX="500.0" layoutY="446.0" mnemonicParsing="false" onAction="#trece_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="trece_dos" layoutX="584.0" layoutY="446.0" mnemonicParsing="false" onAction="#trece_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="trece_tres" layoutX="668.0" layoutY="446.0" mnemonicParsing="false" onAction="#trece_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="trece_cuatro" layoutX="752.0" layoutY="446.0" mnemonicParsing="false" onAction="#trece_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="trece_cinco" layoutX="836.0" layoutY="446.0" mnemonicParsing="false" onAction="#trece_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="catorce_uno" layoutX="500.0" layoutY="473.0" mnemonicParsing="false" onAction="#catorce_uno_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="catorce_dos" layoutX="584.0" layoutY="473.0" mnemonicParsing="false" onAction="#catorce_dos_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="catorce_tres" layoutX="668.0" layoutY="473.0" mnemonicParsing="false" onAction="#catorce_tres_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="catorce_cuatro" layoutX="752.0" layoutY="473.0" mnemonicParsing="false" onAction="#catorce_cuatro_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="catorce_cinco" layoutX="836.0" layoutY="473.0" mnemonicParsing="false" onAction="#catorce_cinco_Metodo" prefHeight="10.0" prefWidth="83.0" style="-fx-background-color: #E2F0D9;">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Label alignment="CENTER" layoutX="416.0" layoutY="113.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="7:00-7:55" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="140.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="7:55-8:50" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="167.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="8:50-9:45" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="194.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="9:45-10:40" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="224.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="11:10-12:05" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="251.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="12:05-13:00" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="278.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="13:00-13:55" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="308.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="14:00-14:55" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="335.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="14:55-15:50" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="362.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="15:50-16:45" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="389.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="16:45-17:40" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="419.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="18:00-18:55" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="446.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="18:55-19:50" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="416.0" layoutY="473.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #92D050;" text="19:50-20:45" textFill="WHITE" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="500.0" layoutY="86.0" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #385723;" text="LUNES" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="584.0" layoutY="86.0" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #385723;" text="MARTES" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="668.0" layoutY="86.0" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #385723;" text="MIERCOLES" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="752.0" layoutY="86.0" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #385723;" text="JUEVES" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="836.0" layoutY="86.0" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #385723;" text="VIERNES" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="416.0" layoutY="86.0" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #385723;" text="HORA / DIA" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="218.0" layoutY="469.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="119.0" style="-fx-background-color: #009647;" text="Guardar Horario" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="grupoS" layoutX="218.0" layoutY="370.0" prefHeight="30.0" prefWidth="190.0" promptText="Seleccionar Grupos" style="-fx-background-color: #9DC3E6;" />
+      <ComboBox fx:id="materiasMuchas" layoutX="217.0" layoutY="246.0" onAction="#aparicionDeProfesores" prefHeight="30.0" prefWidth="190.0" promptText="Seleccionar Materia" style="-fx-background-color: #9DC3E6;" />
+      <ComboBox fx:id="turnoS" layoutX="217.0" layoutY="288.0" prefHeight="30.0" prefWidth="190.0" promptText="Seleccionar Turno" style="-fx-background-color: #9DC3E6;" />
+      <ComboBox fx:id="listaDeProfesores" layoutX="218.0" layoutY="330.0" prefHeight="30.0" prefWidth="190.0" promptText="Seleccionar Profesor" style="-fx-background-color: #9DC3E6;" />
+      <ComboBox fx:id="seleccionarPlanDeEstudio" layoutX="217.0" layoutY="204.0" onAction="#planDeEstudio" prefHeight="30.0" prefWidth="190.0" promptText="Seleccionar Plan de Estudio" style="-fx-background-color: #9DC3E6;" />
+      <ComboBox fx:id="Carrera2" layoutX="217.0" layoutY="121.0" onAction="#carreraSeleccionada" prefHeight="30.0" prefWidth="190.0" promptText="Seleccionar Carrera" style="-fx-background-color: #9DC3E6;" />
+      <ComboBox fx:id="seleccionarCuatrimestre" layoutX="217.0" layoutY="162.0" prefHeight="30.0" prefWidth="190.0" promptText="Seleccionar cuatrimestre" style="-fx-background-color: #9DC3E6;" />
+      <Label alignment="CENTER" layoutX="217.0" layoutY="79.0" prefHeight="40.0" prefWidth="190.0" text="Completa la Información:">
+         <font>
+            <Font name="Franklin Gothic Book" size="16.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.stage.Stage?>
+
+<Stage xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.conection_db.Login1">
+    <scene>
+        <Scene>
+            <AnchorPane prefHeight="455.0" prefWidth="752.0">
+            <children>
+               <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+               <ImageView fitHeight="455.0" fitWidth="752.0">
+                  <image>
+                     <Image url="@../Mockup/VContrasena.jpg" />
+                  </image>
+               </ImageView>
+               <Button fx:id="BContrasenia" layoutX="248.0" layoutY="312.0" mnemonicParsing="false" onAction="#ABContrasenia" opacity="0.0" prefHeight="39.0" prefWidth="258.0" text="Button" />
+               <Button fx:id="BRecuperarContra" layoutX="328.0" layoutY="362.0" mnemonicParsing="false" onAction="#ABRecupContra" opacity="0.0" prefHeight="25.0" prefWidth="99.0" text="Button" />
+               <PasswordField fx:id="PFContrasenia" layoutX="248.0" layoutY="258.0" prefHeight="32.0" prefWidth="257.0" />
+               <Label fx:id="LUsuario" layoutX="248.0" layoutY="224.0" prefHeight="24.0" prefWidth="256.0" textFill="#00cc58">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+               </Label>
+            </children></AnchorPane>
+        </Scene>
+    </scene>
+</Stage>

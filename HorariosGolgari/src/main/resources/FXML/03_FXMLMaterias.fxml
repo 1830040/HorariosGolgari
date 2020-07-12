@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="752.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.conectio_db.Login1">
+   <children>
+      <ImageView fitHeight="70.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" />
+      <Label prefHeight="70.0" prefWidth="752.0" style="-fx-background-color: #002060;" />
+      <Label fx:id="LUsuarioMaestro" layoutX="524.0" layoutY="35.0" prefHeight="26.0" prefWidth="182.0" text="USUARIO DEL MAESTRO" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="LAulas" layoutX="65.0" layoutY="419.0" prefHeight="26.0" prefWidth="135.0" textFill="#00376f">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="224.0" layoutY="91.0" prefHeight="343.0" prefWidth="514.0">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="459.0" prefWidth="496.0" style="-fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0 ); -fx-background-radius: 0; -fx-background-color: #FFFFFF;" />
+         </content>
+      </ScrollPane>
+      <AnchorPane layoutX="-19.0" layoutY="70.0" prefHeight="384.0" prefWidth="227.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-effect: dropshadow( gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0 );">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="25.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="BDisponiblidad" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="86.0" mnemonicParsing="false" onAction="#ABDisponiblidad" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Disponiblidad" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BPerfil" alignment="BASELINE_LEFT" layoutX="54.0" layoutY="52.0" mnemonicParsing="false" onAction="#ABPerfil" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Perfil" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BMaterias" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="121.0" mnemonicParsing="false" onAction="#ABMaterias" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Materias" textFill="#06b912">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BMaestros" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="156.0" mnemonicParsing="false" onAction="#ABMaestros" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Maestros" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BPlanEstudios" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="191.0" mnemonicParsing="false" onAction="#ABPlanEstudios" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Plan de Estudios" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BAulas" alignment="BASELINE_LEFT" layoutX="52.0" layoutY="226.0" mnemonicParsing="false" onAction="#ABAulas" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Aulas" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BGrupos" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="261.0" mnemonicParsing="false" onAction="#ABGrupos" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Grupos" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BHorarios" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="296.0" mnemonicParsing="false" onAction="#ABHorarios" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Horarios" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="BPuntosConfianza" alignment="BASELINE_LEFT" layoutX="53.0" layoutY="331.0" mnemonicParsing="false" onAction="#ABPuntosConfianza" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: TRANSPARENT;" text="Puntos de Confianza" textFill="#2f5597">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="25.0" layoutY="8.0" prefHeight="40.0" prefWidth="182.0" text="N a v e g a c i ó n" textFill="#686060">
+               <font>
+                  <Font name="Franklin Gothic Book" size="22.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Line endX="82.0" endY="1.0" layoutX="135.0" layoutY="45.0" smooth="false" startX="-109.0" startY="1.0" stroke="#686060" strokeWidth="2.0" />
+            <ImageView fx:id="IPerfil" fitHeight="25.0" fitWidth="25.0" layoutX="26.0" layoutY="56.0">
+               <image>
+                  <Image url="@../Mockup/Perfil.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IDisponibilidad" fitHeight="28.0" fitWidth="28.0" layoutX="25.0" layoutY="90.0">
+               <image>
+                  <Image url="@../Mockup/Disponibilidad.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IMaterias" fitHeight="28.0" fitWidth="28.0" layoutX="26.0" layoutY="126.0">
+               <image>
+                  <Image url="@../Mockup/Materias.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IMaestros" fitHeight="28.0" fitWidth="28.0" layoutX="27.0" layoutY="160.0">
+               <image>
+                  <Image url="@../Mockup/Maestros.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IPlanEstudios" fitHeight="28.0" fitWidth="37.0" layoutX="22.0" layoutY="197.0">
+               <image>
+                  <Image url="@../Mockup/PlanEstudios.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IAulas" fitHeight="28.0" fitWidth="28.0" layoutX="27.0" layoutY="230.0">
+               <image>
+                  <Image url="@../Mockup/Aula.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IGrupo" fitHeight="26.0" fitWidth="29.0" layoutX="27.0" layoutY="266.0">
+               <image>
+                  <Image url="@../Mockup/Grupos.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IHorarios" fitHeight="28.0" fitWidth="29.0" layoutX="27.0" layoutY="300.0">
+               <image>
+                  <Image url="@../Mockup/Horarios.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IPuntosConfianza" fitHeight="26.0" fitWidth="31.0" layoutX="26.0" layoutY="336.0">
+               <image>
+                  <Image url="@../Mockup/PuntosConfianza.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="70.0" fitWidth="125.0">
+         <image>
+            <Image url="@../Mockup/LogoUPV.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IOpciones" fitHeight="16.0" fitWidth="16.0" layoutX="714.0" layoutY="40.0">
+         <image>
+            <Image url="@../Mockup/BotonOpciones.png" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
